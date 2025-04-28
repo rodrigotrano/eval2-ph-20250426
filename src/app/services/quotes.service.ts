@@ -9,7 +9,7 @@ export class QuotesService {
     { text: 'El éxito es la suma de pequeños esfuerzos repetidos día tras día.', author: 'Robert Collier' }
   ];
 
-  private allowDeleteOnHome = false; // ⭐ opción para borrar citas en Home
+  private allowDeleteOnHome = false; 
 
   constructor() { }
 
@@ -32,13 +32,16 @@ export class QuotesService {
     return this.quotes[randomIndex];
   }
 
-  // ⭐ Obtener el valor actual de la opción
   getAllowDeleteOnHome() {
     return this.allowDeleteOnHome;
   }
 
-  // ⭐ Cambiar el valor de la opción
   setAllowDeleteOnHome(value: boolean) {
     this.allowDeleteOnHome = value;
   }
+
+  deleteQuoteByText(text: string) {
+    this.quotes = this.quotes.filter((q) => q.text !== text);
+  }
+  
 }

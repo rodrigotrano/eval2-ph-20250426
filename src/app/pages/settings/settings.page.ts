@@ -48,6 +48,6 @@ export class SettingsPage implements OnInit {
   }
 
   goHome() { 
-    this.router.navigate(['/']);
+    this.router.navigate(['/manage-quotes']);
   }
 }

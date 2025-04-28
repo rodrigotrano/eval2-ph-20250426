@@ -18,5 +18,13 @@
       <p>"{{ quote.text }}"</p>
       <small>— {{ quote.author }}</small>
     </div>
+
+    <ion-button color="danger" (click)="deleteQuote()" *ngIf="allowDeleteOnHome && quote">
+      <ion-icon slot="start" name="trash-outline"></ion-icon>
+      Eliminar cita
+    </ion-button>
+    
+    
+
   </div>
 </ion-content>

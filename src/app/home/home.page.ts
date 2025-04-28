@@ -18,6 +18,7 @@ import { QuotesService } from '../services/quotes.service';
 })
 export class HomePage implements OnInit {
   quote: { text: string, author: string } | undefined;
+  allowDeleteOnHome: boolean = false;
 
   constructor(private quotesService: QuotesService) {}
 
@@ -27,9 +28,18 @@ export class HomePage implements OnInit {
 
   getRandomQuote() {
     this.quote = this.quotesService.getRandomQuote();
+    this.allowDeleteOnHome = this.quotesService.getAllowDeleteOnHome();
   }
 
   ionViewWillEnter(): void { 
     this.getRandomQuote();
   }
+
+  deleteQuote() {
+    if (this.quote) {
+      this.quotesService.deleteQuoteByText(this.quote.text);
+      this.getRandomQuote(); 
+    }
+  }
+  
 }
