@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Citas Aleatorias
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" [routerLink]="['/manage-quotes']">
+        <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div id="container">
+
+    <div *ngIf="quote">
+      <p>"{{ quote.text }}"</p>
+      <small>— {{ quote.author }}</small>
+    </div>
+  </div>
+</ion-content>

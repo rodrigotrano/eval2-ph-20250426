@@ -1,0 +1,10 @@
+<ion-list>
+  <ion-item *ngFor="let quote of quotes; index as i">
+    <ion-label>
+      "{{ quote.text }}" — {{ quote.author }}
+    </ion-label>
+    <ion-button color="danger" (click)="onDelete(i)">
+      Eliminar
+    </ion-button>
+  </ion-item>
+</ion-list>

@@ -1,0 +1,7 @@
+{
+  "name": "eval2-ph-20250426",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

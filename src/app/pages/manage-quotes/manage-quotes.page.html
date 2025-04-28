@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      
+      <ion-buttons slot="start">
+        <ion-button (click)="goHome()">
+          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+
+      <ion-title>Gestión de Citas</ion-title>
+
+      <ion-buttons slot="end">
+        <ion-button color="primary" [routerLink]="['/settings']">
+          <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true" class="ion-padding">
+  
+    <h2>Crear una nueva cita</h2>
+  
+    <app-quote-form (addQuote)="handleNewQuote($event)"></app-quote-form>
+  
+    <h2 class="ion-margin-top">Listado de Citas</h2>
+  
+    <app-quote-list [quotes]="quotes" (deleteQuote)="handleDeleteQuote($event)"></app-quote-list>
+  
+  </ion-content>
+  
